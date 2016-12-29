@@ -10,8 +10,13 @@ import CouchDBStORM
 let server = HTTPServer()
 
 SessionConfig.name = "TestingCouchDBDrivers"
-SessionConfig.idle = 10
+SessionConfig.idle = 60
 SessionConfig.couchDatabase = "perfectsessions"
+
+// Optional
+SessionConfig.cookieDomain = "localhost"
+SessionConfig.IPAddressLock = true
+SessionConfig.userAgentLock = true
 
 CouchDBConnection.host = "localhost"
 CouchDBConnection.username = "perfect"
