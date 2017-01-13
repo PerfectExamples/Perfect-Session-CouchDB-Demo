@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  Perfect-Session-Memory-Demo
+//  Perfect-Session-CouchDB-Demo
 //
 //  Created by Jonathan Guthrie on 2016-12-15.
 //
@@ -16,6 +16,9 @@ public func makeWebDemoRoutes() -> Routes {
 	routes.add(method: .get, uri: "/nocsrf", handler: WebHandlers.formNoCSRF)
 	routes.add(method: .get, uri: "/withcsrf", handler: WebHandlers.formWithCSRF)
 	routes.add(method: .post, uris: ["/nocsrf", "/withcsrf"], handler: WebHandlers.formReceive)
+
+	// for CORS
+	routes.add(method: .get, uri: "/cors", handler: WebHandlers.CORSHandlerGet)
 
 	return routes
 }

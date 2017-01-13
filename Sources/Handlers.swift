@@ -1,6 +1,6 @@
 //
 //  Handlers.swift
-//  Perfect-Session-Memory-Demo
+//  Perfect-Session-CouchDB-Demo
 //
 //  Created by Jonathan Guthrie on 2016-12-15.
 //
@@ -39,6 +39,18 @@ public class WebHandlers {
 	}
 
 
+	/* =================================================================================================================
+	CORS
+	================================================================================================================= */
+	open static func CORSHandlerGet(request: HTTPRequest, _ response: HTTPResponse) {
+
+		response.addHeader(.contentType, value: "application/json")
+		try? response.setBody(json: ["Success":"CORS Request"])
+		response.completed()
+
+	}
+
+	
 
 
 	/* =================================================================================================================
